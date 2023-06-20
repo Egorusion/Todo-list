@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
+:root {
+    --accent:#EA5959
+}
+
+* {
+    margin:0;
+    box-sizing: border-box;
+
+
+}
+
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--accent);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+
+}
+
+
+.todo {
+    padding: 32px;
+    background-color: #fff;
+    width: 90vw;
+    border-radius: 16px;
+
+}
+
+.todo__content {
+}
+
+.todo__tittle {
+}
+
+.todo__new {
+    --size:50px;
+    display:flex;
+    margin: 16px 0 32px;
+    
+}
+
+.todo__new input {
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px 16px;
+    height:var(--size);
+    flex-grow: 1;
+    
+
+}
+.todo__add, 
+.todo__task-del {
+    cursor: pointer;
+    text-align: center;
+    width:var(--size);
+    height:var(--size);
+    line-height:var(--size);
+    font-size: 32px;
+    font-weight: 300;
+    border: 1px solid #000;
+    
+    
+}
+
+.todo__list > *:not(:last-child){
+    margin-bottom: 10px;
+} 
+
+
+.todo__task {
+    cursor: default;
+    --size:36px;
+    display:flex;
+    min-height:var(--size) ;
+    align-items: center;
+    
+}
+
+.todo__task:hover .todo__task-del {
+    display: block;
+}
+
+.todo__task_complete .todo__task-text{
+    
+
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__checkbox input{
+    display: none;
+
+}
+
+.todo__checkbox input:checked+div{
+    background-color: var(--accent);
+    
+}
+
+.todo__checkbox input:checked+div::after{
+    display: block;
+    
+}
+.todo__checkbox div{
+    cursor: pointer;
+    --size:28px;
+    height: var(--size);
+    width:  var(--size);
+    border: 1px solid  var(--accent);
+    border-radius: 4px;
+    position: relative;
+}
+.todo__checkbox div::after {
+    text-align: center;
+    content:'\1F5F8';
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+
+
+.todo__task-text {
+    font-size: 20px;
+}
+.todo__task-del {
+    display:none;
+    margin-left: auto;
+    margin-right: 0;
+    line-height: calc(var(--size) * 0.88);
+    font-size: 44px;
+}
